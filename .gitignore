@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+starterslabo-faq-corpus/
+dist/
+.DS_Store
