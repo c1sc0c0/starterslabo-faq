@@ -1,11 +1,11 @@
 ---
 name: starterslabo-faq
 description: >-
-  Logs into mijn.starterslabo.be with a user-supplied username and password,
-  crawls portal FAQ articles and attachments, and answers questions from that
-  corpus (werkingsbijdrage, Peppol, onkosten, facturatie, coaches). Use when
-  the user mentions Starters Labo FAQ, ingest FAQ, crawl FAQ, or asks how the
-  LABO portal or traject rules work.
+  Reads the Starters Labo FAQ (public site and logged-in portal) and answers
+  questions about LABO rules, Peppol, BTW, onkosten, facturatie, and coaches.
+  In Claude's GUI, opens mijn.starterslabo.be and waits while the user types
+  their password on the website — never in the chat. Use when the user
+  mentions Starterslabo FAQ, werkingsbijdrage, or portal boekhouding.
 ---
 
 # Starters Labo FAQ ingest + Q&A
@@ -14,17 +14,25 @@ Two jobs: **ingest** the logged-in FAQ, then **answer** from the local corpus.
 
 Never bake credentials into this skill, never write them to disk, never print the password, never commit `.env`.
 
-## If this is Claude on the web (claude.ai)
+## Safe login (Claude Desktop / Cowork / Claude in Chrome)
 
-Do **not** ask for the mijn.starterslabo.be password. The cloud app cannot log into the portal.
+This is the default for the Claude app. **Do not ask the user to type their password in the chat.**
 
-- Answer public FAQ questions from https://starterslabo.be/faq/ and https://starterslabo.be/faq/page/2/
-- For portal FAQ: ask the user to log in themselves, copy the article (and attachment names), and paste it here
-- Then answer only from what they pasted plus the public FAQ
+1. Open `https://mijn.starterslabo.be/login.aspx` in the built-in browser or Claude in Chrome.
+2. **Stop.** Tell the user: type email and password **in the Starterslabo form** (the fields on the website), then click **Inloggen**. You must not fill `#InputPassword` or any password field — Anthropic blocks that, and the password must never appear in the conversation.
+3. Wait until the URL is no longer `login.aspx` (homepage / FAQ). If they say they are logged in, continue.
+4. Open `https://mijn.starterslabo.be/Views/FAQ.aspx`.
+5. For each `.card`, read collapsed `.card-body` with `textContent` (not only visible `innerText`) plus attachment names.
+6. Also read `https://starterslabo.be/faq/` and `/faq/page/2/`.
+7. Answer from that content. Quote the FAQ; do not invent rates.
 
-## Credentials (Cursor / Claude Code on the user's computer only)
+If there is no browser panel (plain claude.ai chat with no Desktop app), say so: they need the **Claude desktop app** (Pro/Max) so a browser can open beside the chat. Do not fall back to “paste your password here.” Public FAQ questions can still be answered from starterslabo.be without login.
 
-If the user did not give a username and password in this conversation, ask for them. Do not read `.env` or any other saved secret file unless the user explicitly says to.
+Optional: if Cowork offers **Import cookies** for `mijn.starterslabo.be`, the user can reuse a login already saved in Chrome/Edge/Firefox and may not need to type the password this time.
+
+## Credentials (Cursor / Claude Code crawler only)
+
+Only if you are running `scripts/crawl_faq.py` on the user's computer. Prefer env vars over putting the password in the prompt. Never echo it.
 
 Pass them only as environment variables for one crawl command:
 

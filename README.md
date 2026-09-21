@@ -4,73 +4,71 @@ Unofficial helper for [Cursor](https://cursor.com) and [Claude](https://claude.a
 
 Not affiliated with Starterslabo. Never put your portal password in this GitHub repo.
 
-**Most people should use Claude in the browser or the Claude app.** You do not need a terminal.
+**Most people should use the Claude desktop app.** You type your Starterslabo password on the login **website**, never in the chat.
 
-- **Claude (website / app):** [download the zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip) → follow [Claude (website or app)](#claude-website-or-app)
+- **Claude app:** [download the zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip) → follow [Claude (website or app)](#claude-website-or-app)
 - **Cursor or Claude Code:** follow [On your computer](#on-your-computer-cursor-or-claude-code)
 
 ---
 
 ## Claude (website or app)
 
-This is the path if you only use [claude.ai](https://claude.ai) or the Claude desktop app.
+Use the [Claude desktop app](https://claude.com/download) (Pro or Max). That gives you a **browser next to the chat**. You type your Starterslabo password **on the website**, not in the conversation. Claude is not allowed to type passwords for you — that is an Anthropic rule, and it is the safe way.
 
-### Nederlands — in 6 stappen
+You need: the desktop app, the skill zip, and a new chat. No terminal.
 
-1. **Download het zip-bestand**  
-   Klik hier: [starterslabo-faq.zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip).  
-   **Pak het bestand niet uit.** Je uploadt de zip zoals hij is.  
-   Gebruik niet de groene knop **Code → Download ZIP** op GitHub — dat bestand werkt niet in Claude.
+### How login works (this is the important bit)
 
-2. **Zet Skills aan**  
-   Open Claude → **Settings** (tandwiel) → **Capabilities**.  
-   Zet **Code execution and file creation** aan. Zonder dit werkt de skill niet.
+```
+You  →  type email + password in the Starterslabo login form (the website)
+          not in the Claude message box
 
-3. **Upload de skill**  
-   Ga naar **Customize → Skills**.  
-   Klik op **+**, kies **+ Create skill**, daarna **Upload a skill**.  
-   Kies het bestand `starterslabo-faq.zip`.
+Claude → opens the page, waits, then reads the FAQ after you are in
+```
 
-4. **Zet de skill aan**  
-   In de lijst bij **Skills** moet **starterslabo-faq** op **aan** (groene schakelaar) staan.
+Never paste your password into the chat. If Claude asks you to, say: *I'll type it in the website form — continue when I'm in.*
 
-5. **Start een nieuw gesprek** en typ bijvoorbeeld:  
-   *Gebruik de Starters Labo FAQ skill. Moet ik BTW rekenen op verzendkosten?*  
-   of: *Lees https://starterslabo.be/faq/ en leg uit hoe lang het LABO-traject duurt.*
+### Nederlands — installeren en inloggen
 
-6. **Wachtwoord**  
-   Typ **nooit** je wachtwoord van mijn.starterslabo.be in Claude op het web.  
-   Voor de **openbare** FAQ (starterslabo.be) is geen login nodig.  
-   Voor de **privé-FAQ in het portaal**: log zelf in op [mijn.starterslabo.be](https://mijn.starterslabo.be), open **FAQ**, kopieer het artikel, en plak het in Claude.
+1. Installeer de **Claude-app** van [claude.com/download](https://claude.com/download) en log in.  
+   Skills + ingebouwde browser zitten op **Pro/Max**. In de app: **Settings → Capabilities** → **Code execution and file creation** aan.
 
-**Upload mislukt?** Je hebt waarschijnlijk het verkeerde zip-bestand. Download opnieuw via de link hierboven. De map in de zip moet `starterslabo-faq` heten.
+2. Download [starterslabo-faq.zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip).  
+   **Niet uitpakken.** Niet de groene knop **Code → Download ZIP** op GitHub gebruiken.
 
-### English — same 6 steps
+3. **Customize → Skills → + → Create skill → Upload a skill** → kies die zip. Zet **starterslabo-faq** op **aan**.
 
-1. **Download the zip**  
-   Click: [starterslabo-faq.zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip).  
-   **Do not unzip it.** Upload the zip as-is.  
-   Do not use GitHub’s green **Code → Download ZIP** button — Claude will reject that file.
+4. Nieuw gesprek, typ:  
+   *Gebruik de Starters Labo FAQ skill. Open mijn.starterslabo.be, ik log zelf in, daarna lees je de FAQ. Daarna: moet ik BTW rekenen op verzending?*
 
-2. **Turn Skills on**  
-   Claude → **Settings** (gear) → **Capabilities**.  
-   Enable **Code execution and file creation**.
+5. Er opent een browservenster naast de chat met de **Inloggen**-pagina van Starterslabo.  
+   Vul daar **e-mail** en **wachtwoord** in (zoals op elke website) en klik **Inloggen**.  
+   Zeg in de chat: *Ik ben ingelogd, ga verder.*
 
-3. **Upload the skill**  
-   **Customize → Skills** → **+** → **+ Create skill** → **Upload a skill** → pick `starterslabo-faq.zip`.
+6. Claude opent daarna de FAQ en beantwoordt je vraag.
 
-4. **Enable it**  
-   Toggle **starterslabo-faq** on in your Skills list.
+**Al in Chrome ingelogd?** Bij de eerste browser in Cowork kun je **Import cookies** kiezen voor `mijn.starterslabo.be`. Dan hoef je het wachtwoord deze keer niet opnieuw te typen.
 
-5. **Start a new chat**, for example:  
-   *Use the Starters Labo FAQ skill. Do I need to charge VAT on shipping?*  
-   or: *Read https://starterslabo.be/faq/ and explain how long the LABO trajectory lasts.*
+**Geen browservenster?** Je zit waarschijnlijk alleen op claude.ai in Safari/Chrome zonder de desktop-app. Installeer de app; zonder dat venster kan Claude het portaal niet veilig openen.
 
-6. **Passwords**  
-   Never type your mijn.starterslabo.be password into Claude on the web.  
-   The **public** FAQ needs no login. For the **private portal FAQ**, log in yourself, copy the article, and paste it into the chat.
+### English — install and sign in
 
-Claude in the browser **cannot** log into the portal for you. Automatic login only works on your computer (section below).
+1. Install the **Claude app** from [claude.com/download](https://claude.com/download). Enable **Settings → Capabilities → Code execution and file creation**.
+
+2. Download [starterslabo-faq.zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip). **Do not unzip.** Do not use GitHub **Code → Download ZIP**.
+
+3. **Customize → Skills → + → Create skill → Upload a skill** → that zip. Toggle **starterslabo-faq** on.
+
+4. New chat:  
+   *Use the Starters Labo FAQ skill. Open mijn.starterslabo.be, I'll log in myself, then read the FAQ. Then: do I charge VAT on shipping?*
+
+5. A browser panel opens on the Starterslabo **Inloggen** page. Type your email and password **there**, click **Inloggen**, then tell Claude *I'm in, continue.*
+
+6. Claude reads the FAQ and answers.
+
+Already signed in in Chrome? Use **Import cookies** for `mijn.starterslabo.be` when Cowork first opens a browser.
+
+No browser panel? Use the desktop app, not a plain website tab.
 
 ---
 
