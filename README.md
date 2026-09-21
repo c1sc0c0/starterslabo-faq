@@ -49,7 +49,11 @@ Never paste your password into the chat. If Claude asks you to, say: *I'll type 
 
 **Al in Chrome ingelogd?** Bij de eerste browser in Cowork kun je **Import cookies** kiezen voor `mijn.starterslabo.be`. Dan hoef je het wachtwoord deze keer niet opnieuw te typen.
 
+**1Password?** In Claude Desktop: **Settings → Connectors → 1Password**. Als Claude de loginpagina opent, keur je in 1Password één item goed (Touch ID). 1Password vult het formulier; Claude ziet het wachtwoord niet. Vereist: Mac, Claude Desktop, Claude in Chrome, 1Password-app + extensie ([uitleg Anthropic](https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude)).
+
 **Geen browservenster?** Je zit waarschijnlijk alleen op claude.ai in Safari/Chrome zonder de desktop-app. Installeer de app; zonder dat venster kan Claude het portaal niet veilig openen.
+
+Claude heeft **geen** algemeen vakje “skill secrets” waar je `STARTERSLABO_PASSWORD` voor een custom skill bewaart. Wat er wél is: 1Password, onthouden login in de ingebouwde browser, cookie-import, en (voor MCP-connectors) API-keys in **Customize → Connectors**. Starterslabo is een website-login, geen connector — dus 1Password of zelf intypen op de site.
 
 ### English — install and sign in
 
@@ -68,7 +72,11 @@ Never paste your password into the chat. If Claude asks you to, say: *I'll type 
 
 Already signed in in Chrome? Use **Import cookies** for `mijn.starterslabo.be` when Cowork first opens a browser.
 
+**1Password:** Claude Desktop → **Settings → Connectors → 1Password**. When Claude hits the login page, approve the 1Password prompt (biometrics). 1Password fills the form; the password never enters the chat. Needs Mac, Claude Desktop, Claude in Chrome, and the 1Password app + extension ([Anthropic’s setup](https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude)).
+
 No browser panel? Use the desktop app, not a plain website tab.
+
+There is **no** generic Settings field where a custom skill can read `STARTERSLABO_PASSWORD`. Claude *does* store secrets in other places: 1Password, remembered logins in the built-in browser, imported cookies, and API keys on **Customize → Connectors** (MCP). Starterslabo is a website login, so use 1Password or type it on the site.
 
 ---
 

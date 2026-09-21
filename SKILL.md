@@ -28,7 +28,7 @@ This is the default for the Claude app. **Do not ask the user to type their pass
 
 If there is no browser panel (plain claude.ai chat with no Desktop app), say so: they need the **Claude desktop app** (Pro/Max) so a browser can open beside the chat. Do not fall back to “paste your password here.” Public FAQ questions can still be answered from starterslabo.be without login.
 
-Optional: if Cowork offers **Import cookies** for `mijn.starterslabo.be`, the user can reuse a login already saved in Chrome/Edge/Firefox and may not need to type the password this time.
+Optional: if **1Password for Claude** is connected, let 1Password fill the login after the user approves the prompt. You still must not read or ask for the password. If that is not available, wait while they type in the website form, or use **Import cookies** / an already-signed-in Claude in Chrome session.
 
 ## Credentials (Cursor / Claude Code crawler only)
 
