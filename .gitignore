@@ -4,4 +4,5 @@ __pycache__/
 .env
 .env.*
 starterslabo-faq-corpus/
+dist/
 .DS_Store

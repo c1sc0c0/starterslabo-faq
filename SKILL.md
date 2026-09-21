@@ -14,7 +14,15 @@ Two jobs: **ingest** the logged-in FAQ, then **answer** from the local corpus.
 
 Never bake credentials into this skill, never write them to disk, never print the password, never commit `.env`.
 
-## Credentials
+## If this is Claude on the web (claude.ai)
+
+Do **not** ask for the mijn.starterslabo.be password. The cloud app cannot log into the portal.
+
+- Answer public FAQ questions from https://starterslabo.be/faq/ and https://starterslabo.be/faq/page/2/
+- For portal FAQ: ask the user to log in themselves, copy the article (and attachment names), and paste it here
+- Then answer only from what they pasted plus the public FAQ
+
+## Credentials (Cursor / Claude Code on the user's computer only)
 
 If the user did not give a username and password in this conversation, ask for them. Do not read `.env` or any other saved secret file unless the user explicitly says to.
 
@@ -72,20 +80,11 @@ starterslabo-faq-corpus/
 
 ## Install this skill
 
-Clone into the skills folder (same layout for Cursor and Claude Code):
+**Claude website/app:** user downloads [starterslabo-faq.zip](https://github.com/c1sc0c0/starterslabo-faq/releases/latest/download/starterslabo-faq.zip) and uploads it under Customize → Skills. See the README.
+
+**Cursor / Claude Code:** clone this repo as the skill folder:
 
 ```bash
-# Cursor — this project
-git clone https://github.com/c1sc0c0/starterslabo-faq.git .cursor/skills/starterslabo-faq
-
-# Cursor — all projects
 git clone https://github.com/c1sc0c0/starterslabo-faq.git ~/.cursor/skills/starterslabo-faq
-
-# Claude Code — this project
-git clone https://github.com/c1sc0c0/starterslabo-faq.git .claude/skills/starterslabo-faq
-
-# Claude Code — all projects
 git clone https://github.com/c1sc0c0/starterslabo-faq.git ~/.claude/skills/starterslabo-faq
 ```
-
-Claude.ai: zip this folder and upload it as a skill (browser fallback if scripts cannot run).
